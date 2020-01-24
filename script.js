@@ -1,8 +1,11 @@
 const container = document.querySelector('.grid-container');
 let squareNumber = 16;
 
-let resetButton = document.createElement('button');
-resetButton.textContent = "Reset";
+//BUTTONS
+
+//Reset
+let resetButton = document.querySelector(".reset");
+
 resetButton.addEventListener('click', function() {
     squareNumber = prompt("Enter a number of squares in a side of the grid. Numbers above 120 aren't recommended");
 
@@ -15,6 +18,45 @@ resetButton.addEventListener('click', function() {
 
 document.querySelector('body').insertBefore(resetButton, container);
 
+//Rainbow
+let rainbowButton = document.querySelector(".rainbow");
+
+document.querySelector('body').insertBefore(rainbowButton, container);
+
+rainbowButton.addEventListener('click', function() {
+    squareNumber = prompt("Enter a number of squares in a side of the grid. Numbers above 120 aren't recommended");
+
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
+    for (let i = 0; i < squareNumber; i++) {
+
+        let columns = `repeat(${i + 1}, 1fr)`;
+        container.style.gridTemplateColumns = columns;
+    
+        for (let j = 0; j < squareNumber; j++) {
+            let gridSquare = document.createElement('div');
+            gridSquare.classList.add('square');
+    
+            gridSquare.addEventListener('mouseover', function() {
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+    
+                let randomColor = `rgb(${red}, ${green}, ${blue})`;
+    
+                gridSquare.style.backgroundColor = randomColor;
+            })
+    
+            container.appendChild(gridSquare);
+        }
+    
+    }
+
+})
+
+//GRID
 createGrid();
 
 function createGrid() {
@@ -36,6 +78,8 @@ function createGrid() {
     
     }
 }
+
+
 
 
 
