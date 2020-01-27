@@ -1,6 +1,12 @@
 body {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+}
+
+.btn-container {
+    display: flex;
     flex-direction: column;
 }
 
@@ -15,7 +21,7 @@ body {
     height: 500px;
     border: 1px solid rgb(133, 133, 133);
     background-color: rgb(133, 133, 133);
-    margin: 10px auto;
+    margin-left: 20px;
     box-sizing: border-box;
     gap: 1px;
 }
