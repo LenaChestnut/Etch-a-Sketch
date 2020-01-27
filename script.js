@@ -7,6 +7,19 @@ let squareNumber = 16;
 let resetButton = document.querySelector(".reset");
 
 resetButton.addEventListener('click', function() {
+    squareNumber = 16;
+
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
+    createGrid();
+})
+
+//Black
+let blackButton = document.querySelector(".black");
+
+blackButton.addEventListener('click', function() {
     squareNumber = prompt("Enter a number of squares in a side of the grid. Numbers above 120 aren't recommended");
 
     while (container.firstChild) {
