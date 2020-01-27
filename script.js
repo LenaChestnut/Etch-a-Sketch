@@ -16,12 +16,8 @@ resetButton.addEventListener('click', function() {
     createGrid();
 })
 
-document.querySelector('body').insertBefore(resetButton, container);
-
 //Rainbow
 let rainbowButton = document.querySelector(".rainbow");
-
-document.querySelector('body').insertBefore(rainbowButton, container);
 
 rainbowButton.addEventListener('click', function() {
     squareNumber = prompt("Enter a number of squares in a side of the grid. Numbers above 120 aren't recommended");
