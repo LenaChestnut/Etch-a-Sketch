@@ -46,3 +46,23 @@ button {
 button:hover {
     background-color: darkslategray;
 }
+
+@media screen and (max-width: 1000px) {
+    .grid-container {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid-container {
+        width: 300px;
+        height: 300px;
+        margin: 20px 10px 10px 10px;
+    }
+}
